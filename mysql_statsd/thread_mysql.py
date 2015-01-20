@@ -26,7 +26,7 @@ class ThreadMySQL(ThreadBase):
 
     def configure(self, config_dict):
         self.host = config_dict.get('mysql').get('host', 'localhost')
-        self.port = config_dict.get('mysql').get('port', 3306)
+        self.port = int(config_dict.get('mysql').get('port', 3306))
 
         self.username = config_dict.get('mysql').get('username', 'root')
         self.password = config_dict.get('mysql').get('password', '')
